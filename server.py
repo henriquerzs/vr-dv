@@ -1,12 +1,16 @@
+#!/usr/bin/env python
+ 
+import BaseHTTPServer
+import CGIHTTPServer
+import cgitb; cgitb.enable()  ## This line enables CGI error reporting
 import os
-import http.server
-import socketserver
 
-PORT = int(os.getenv('VCAP_APP_PORT', '8000'))
-
-Handler = http.server.SimpleHTTPRequestHandler
-
-httpd = socketserver.TCPServer(("", PORT), Handler)
-
-print("serving at port", PORT)
+port = int(os.getenv('VCAP_APP_PORT'))
+ 
+server = BaseHTTPServer.HTTPServer
+handler = CGIHTTPServer.CGIHTTPRequestHandler
+server_address = ("", port)
+handler.cgi_directories = ["/"]
+ 
+httpd = server(server_address, handler)
 httpd.serve_forever()

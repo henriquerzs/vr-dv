@@ -1,10 +1,5 @@
+---
 applications:
 - name: vr-dv
-  host: vr-dv
-  memory: 512M
-  command: python couch-app.py
-  services:
-  - todo-db
-  - Visual-Recognition-rm
-
-  
+  memory: 128MB
+  command: python server.py
