@@ -1,6 +1,6 @@
 applications:
-- name: Interface-VR-HAMK
-  host: Interface-VR-HAMK
+- name: vr-dv
+  host: vr-dv
   memory: 512M
   command: python server.py
   command: python couch-app.py
