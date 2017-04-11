@@ -1,12 +1,24 @@
 {
   "ServiceId": "com.ibm.cloudoe.orion.client.deploy",
   "Params": {
+  "Name": "vr-dv",
     "Target": {
       "Url": "https://api.ng.bluemix.net",
       "Org": "VR HAMK Project",
       "Space": "Test"
     },
-    "Name": "vr-dv",
+    "DevMode": {
+        "Instrumentation": {
+            "command": "",
+            "env": {
+                "BLUEMIX_APP_MGMT_ENABLE": "devconsole+shell+inspector",
+                "NODE_ENV": "development"
+            },
+            "memory": "384M"
+        },
+        "Packager": "com.ibm.perfectstorm.cloudoe.packager.LiveEditDeploymentPackager"
+    },
+    
     "Instrumentation": {}
   },
   "Path": "",
