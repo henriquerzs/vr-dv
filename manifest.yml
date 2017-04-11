@@ -1,5 +1,7 @@
----
 applications:
 - name: vr-dv
-  memory: 128MB
-  command: python server.py
+  host: vr-dv
+  memory: 256M
+  command: python couch-app.py
+  services:
+  - todo-db
