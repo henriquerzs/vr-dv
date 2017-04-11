@@ -3,3 +3,4 @@ applications:
 - name: vr-dv
   memory: 128MB
   command: python server.py
+  host: vr-dv
